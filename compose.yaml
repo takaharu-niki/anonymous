@@ -25,3 +25,9 @@ services:
       TZ: Asia/Tokyo
     volumes:
       - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+  mail:
+    image: axllent/mailpit:v1.8
+    container_name: mailpit
+    ports:
+      - 8025:8025
+      - 1025:1025
