@@ -7,7 +7,9 @@ services:
     volumes:
       - ./php/src:/var/www/html/example
   web:
-    image: nginx:1.25.1
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
     container_name: nginx
     ports:
       - 8080:80
