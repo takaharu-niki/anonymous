@@ -15,7 +15,9 @@ services:
       - 8080:80
     volumes:
       - ./src:/var/www/html/example
-      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./default.conf.template:/etc/nginx/templates/default.conf.template
+    environment:
+      - PHP_HOST=php
   db:
     image: mysql:8.0.34
     container_name: mysql
